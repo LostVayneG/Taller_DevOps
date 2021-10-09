@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        docker { image 'python' }
+    }
+    stages{
+        stage('build'){
+            steps{
+                sh 'python -m pip install Django'
+                sh 'python manage.py makemigrations projects'
+                sh 'python manage.py migrate projects'
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh 'python manage.py runserver'
+            }
+        }
+    }
+}
