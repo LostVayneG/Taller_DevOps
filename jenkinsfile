@@ -5,14 +5,11 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh 'python -m pip install Django'
-                sh 'python manage.py makemigrations projects'
-                sh 'python manage.py migrate projects'
+                sh 'echo hola'
             }
         }
         stage('deploy'){
             steps{
-                sh 'python manage.py runserver'
             }
         }
     }
