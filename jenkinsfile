@@ -1,14 +1,9 @@
 pipeline {
-    agent {
-        docker{
-            image 'python'
-            args '--privileged'
-        }
-    }
+    agent any
     stages{
         stage('build'){
             steps{
-                sh 'echo hola'
+                sh 'sudo apt-get install python'
             }
         }
     }
