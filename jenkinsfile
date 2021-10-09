@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'python' }
-    }
+    agent none
     stages{
         stage('build'){
+            agent {
+                docker { image 'python:3-alpine' }
+            }
             steps{
                 sh 'echo hola'
             }
