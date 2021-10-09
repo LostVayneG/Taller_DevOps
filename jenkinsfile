@@ -8,9 +8,5 @@ pipeline {
                 sh 'echo hola'
             }
         }
-        stage('deploy'){
-            steps{
-            }
-        }
     }
 }
