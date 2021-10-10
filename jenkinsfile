@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh 'cp -r ./rp-portfolio /deploy/'
+                sh 'cp -rf ./rp-portfolio /deploy/'
                 sh 'cd /deploy/'
                 sh 'cd /rp-portfolio/'
                 sh 'ls -l'
