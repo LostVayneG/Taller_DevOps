@@ -6,6 +6,11 @@ pipeline {
                 sh 'cp -rf ./rp-portfolio ./deploy/'
             }
         }
+        stage('dir'){
+            steps{
+                sh 'cd deploy'
+            }
+        }
         stage('build'){
             steps{
                 sh 'ls -l'
