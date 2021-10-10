@@ -4,7 +4,11 @@ pipeline {
         stage('build'){
             steps{
                 sh 'cp -r rp-portfolio /deploy'
-                sh 'docker --version'
+                sh 'sudo apt-get install software-properties-common'
+                sh 'sudo add-apt-repository ppa:deadsnakes/ppa'
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install python3.8'
+                sh 'python --version'
             }
         }
     }
