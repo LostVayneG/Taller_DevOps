@@ -10,7 +10,9 @@ pipeline {
             }
         }
         stage('config'){
-            sh 'cp -rf ./rp-portfolio ./deploy/'
+            steps{
+                sh 'cp -rf ./rp-portfolio ./deploy/'
+            }
         }
     }
 }
