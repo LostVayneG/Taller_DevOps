@@ -4,6 +4,7 @@ pipeline {
         stage('build'){
             steps{
                 sh 'cp -r rp-portfolio /deploy'
+                docker exec -it pythonserver echo "I'm inside the container!"
             }
         }
     }
