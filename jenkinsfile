@@ -14,6 +14,11 @@ pipeline {
                 sh 'cp -r ./rp-portfolio /deploy'
             }
         }
+        stage('linter'){
+            steps{
+                sh 'pylint ./rp-portfolio'
+            }
+        }
     }
 }
 
