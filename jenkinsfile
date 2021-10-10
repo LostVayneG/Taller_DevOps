@@ -3,14 +3,15 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh 'cd /deploy/rp-portfolio'
+                sh 'cp -r rp-portfolio /deploy/'
+                sh 'cd deploy/rp-portfolio/'
                 sh 'python manage.py makemigrations projects'
-                sh 'python manage.py migrate projects'
+                sh 'python manage.pymanage.py migrate projects'
             }
         }
         stage('deploy'){
             steps{
-                sh 'cd /deploy/rp-portfolio'
+                sh 'cd /deploy/rp-portfolio/'
                 sh 'python manage.py runserver'
             }
         }
