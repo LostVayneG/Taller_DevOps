@@ -5,6 +5,7 @@ pipeline {
             steps{
                 sh 'cp -r ./rp-portfolio /deploy/'
                 sh 'cd /deploy/rp-portfolio/'
+                sh 'ls -l'
                 sh 'python manage.py makemigrations projects'
                 sh 'python manage.pymanage.py migrate projects'
             }
