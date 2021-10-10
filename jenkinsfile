@@ -8,8 +8,10 @@ pipeline {
         }
         stage('build'){
             steps{
-                sh 'python3 ./rp-portfolio/manage.py makemigrations projects'
-                sh 'python3 ./rp-portfolio/manage.py migrate projects'
+                dir('deploy/rp-portfolio/'){
+                    sh 'python3 ./rp-portfolio/manage.py makemigrations projects'
+                    sh 'python3 ./rp-portfolio/manage.py migrate projects'
+                }
             }
         }
     }
