@@ -8,8 +8,7 @@ pipeline {
         }
         stage('dir'){
             steps{
-                sh 'chmod o+wrx rp-portfolio'
-                sh 'rp-portfolio/'
+                sh 'rp-portfolio'
             }
         }
         stage('build'){
