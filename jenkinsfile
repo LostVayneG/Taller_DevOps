@@ -4,7 +4,7 @@ pipeline {
         stage('build'){
             steps{
                 sh 'cp -r rp-portfolio /deploy'
-                sh 'docker exec -it jenkins echo "I'm inside the container!"'
+                sh 'docker --version'
             }
         }
     }
