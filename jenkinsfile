@@ -3,11 +3,15 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh 'cp -r rp-portfolio /deploy'
-                sh 'add-apt-repository ppa:deadsnakes/ppa'
-                sh 'apt-get update'
-                sh 'apt-get install python3.8'
-                sh 'python --version'
+                sh 'cd /deploy/rp-portfolio'
+                sh 'python manage.py makemigrations projects'
+                sh 'python manage.py migrate projects'
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh 'cd /deploy/rp-portfolio'
+                sh 'python manage.py runserver'
             }
         }
     }
