@@ -12,13 +12,13 @@ pipeline {
                 sh 'cd ./rp-portfolio'
                 sh 'ls -l'
                 sh 'python3 ./rp-portfolio/manage.py makemigrations projects'
-                sh 'python3 manage.pymanage.py migrate projects'
+                sh 'python3 ./rp-portfolio/manage.py migrate projects'
             }
         }
         stage('deploy'){
             steps{
                 sh 'cd /deploy/rp-portfolio/'
-                sh 'python3 manage.py runserver'
+                sh 'python3 ./rp-portfolio/manage.py runserver'
             }
         }
     }
