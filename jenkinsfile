@@ -8,7 +8,7 @@ pipeline {
         }
         stage('dir'){
             steps{
-                sh ' cd ./deploy/rp-portfolio/'
+                sh 'rp-portfolio/'
             }
         }
         stage('build'){
