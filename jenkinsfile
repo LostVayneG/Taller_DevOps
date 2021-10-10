@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages{
-        stage('config'){
-            steps{
-                sh 'cp -r ./rp-portfolio /deploy'
-            }
-        }
         stage('build'){
             steps{
                 dir('./rp-portfolio/'){
                     sh 'python3 manage.py makemigrations projects'
                     sh 'python3 manage.py migrate projects'
                 }
+            }
+        }
+        stage('config'){
+            steps{
+                sh 'cp -r ./rp-portfolio /deploy'
             }
         }
     }
