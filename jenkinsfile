@@ -13,6 +13,7 @@ pipeline {
         }
         stage('build'){
             steps{
+                sh 'ls -l'
                 sh 'python manage.py makemigrations projects'
                 sh 'python manage.pymanage.py migrate projects'
             }
