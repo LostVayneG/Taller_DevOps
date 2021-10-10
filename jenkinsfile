@@ -4,8 +4,8 @@ pipeline {
         stage('build'){
             steps{
                 sh 'cp -rf ./rp-portfolio /deploy/'
-                sh 'cd /deploy/'
-                sh 'cd /rp-portfolio/'
+                sh 'cd deploy'
+                sh 'cd rp-portfolio'
                 sh 'ls -l'
                 sh 'python manage.py makemigrations projects'
                 sh 'python manage.pymanage.py migrate projects'
