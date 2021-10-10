@@ -11,7 +11,7 @@ pipeline {
                 sh 'ls -l'
                 sh 'cd ./rp-portfolio'
                 sh 'ls -l'
-                sh 'python manage.py makemigrations projects'
+                sh 'python ./rp-portfolio/manage.py makemigrations projects'
                 sh 'python manage.pymanage.py migrate projects'
             }
         }
