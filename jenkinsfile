@@ -4,10 +4,10 @@ pipeline {
         stage('build'){
             steps{
                 sh 'cp -r rp-portfolio /deploy'
-                sh 'sudo apt-get install software-properties-common'
-                sh 'sudo add-apt-repository ppa:deadsnakes/ppa'
-                sh 'sudo apt-get update'
-                sh 'sudo apt-get install python3.8'
+                sh 'apt-get install software-properties-common'
+                sh 'add-apt-repository ppa:deadsnakes/ppa'
+                sh 'apt-get update'
+                sh 'apt-get install python3.8'
                 sh 'python --version'
             }
         }
